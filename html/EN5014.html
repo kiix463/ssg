@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="Author" content="" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:description" content="">
+<meta property="og:title" content="">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<title></title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--<script src="../js/bootstrap.min.js"></script>-->
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/imagesloaded.pkgd.min.js"></script>
+<script src="../js/gsap.min.js"></script>
+<script src="../js/smooth-scrollbar.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/uiex/index.js"></script>
+<script src="../js/uiex/common.js"></script>
+<script src="../js/uiex/pages/en5013.js"></script>
+</head>
+
+<body>
+<div class="accessbility"><a href="#contents">본문바로가기</a></div>
+<div id="wrapper">
+    <header id="header">
+        <div class="row">
+            <div class="headcon-left">
+                <button type="button">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.02868 7.20803C0.50867 7.60833 0.50867 8.39254 1.02868 8.79284L9.63932 15.4213C10.2969 15.9275 11.2493 15.4587 11.2493 14.6289V10.5023L17.6393 15.4213C18.2969 15.9275 19.2493 15.4587 19.2493 14.6289V1.37196C19.2493 0.542119 18.2969 0.0733563 17.6393 0.579553L11.2493 5.49858V1.37196C11.2493 0.542119 10.2969 0.0733563 9.63932 0.579553L1.02868 7.20803Z" fill="#8F8F8F"/>
+                    </svg>
+                </button>
+                <h1><a href="index.html"><img src="../img/img-logo.png" alt=""></a><a href="#"><img src="../img/img-logo-cash.svg" alt=""></a></h1>
+            </div>
+            <ul class="stats">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="headcon-right">
+                <div class="date-info"></div>
+                <button type="button">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.9713 8.79197C19.4913 8.39167 19.4913 7.60746 18.9713 7.20716L10.3607 0.578686C9.70311 0.0724888 8.75069 0.541254 8.75069 1.37109V5.49771L2.36068 0.578686C1.70311 0.0724888 0.750687 0.541254 0.750687 1.37109V14.628C0.750687 15.4579 1.70311 15.9266 2.36068 15.4204L8.75069 10.5014V14.628C8.75069 15.4579 9.70311 15.9266 10.3607 15.4204L18.9713 8.79197Z" fill="#8F8F8F"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section id="contents">
+        <!-- contents -->
+        <article class="article">
+            <h2 class="title">S/W Version Information - Details</h2>
+            <div class="scroll-block ">
+                <div class="caution scroll">
+                </div>
+                <p class="btn-top">
+                    <button type="button" onclick="onTcrTopButtonClick()">
+                        <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.24073 10.3175C8.60015 10.7368 9.23145 10.7853 9.65077 10.4259C10.0701 10.0665 10.1187 9.4352 9.75924 9.01587L5.75924 4.34921C5.56926 4.12756 5.29191 4 4.99998 4C4.70806 4 4.43071 4.12756 4.24073 4.34921L0.240725 9.01587C-0.118696 9.4352 -0.0701354 10.0665 0.34919 10.4259C0.768516 10.7853 1.39982 10.7368 1.75924 10.3175L4 7.70324L4 16C4 16.5523 4.44771 17 5 17C5.55228 17 6 16.5523 6 16L6 7.70328L8.24073 10.3175Z" fill="#34B6EC"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H9C9.55229 0 10 0.447715 10 1C10 1.55228 9.55229 2 9 2H1C0.447715 2 0 1.55228 0 1Z" fill="#34B6EC"/>
+                        </svg>
+                    </button>
+                    <button type="button" onclick="onTcrBottomButtonClick()">
+                        <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.75928 6.68254C1.39985 6.26322 0.768553 6.21466 0.349228 6.57408C-0.0700983 6.9335 -0.11866 7.5648 0.240762 7.98413L4.24076 12.6508C4.43074 12.8724 4.70809 13 5.00002 13C5.29194 13 5.56929 12.8724 5.75927 12.6508L9.75928 7.98413C10.1187 7.5648 10.0701 6.9335 9.65081 6.57408C9.23148 6.21466 8.60018 6.26322 8.24076 6.68254L6 9.29676L6 1C6 0.447716 5.55229 7.28094e-07 5 6.55671e-07C4.44772 5.83247e-07 4 0.447715 4 1L4 9.29672L1.75928 6.68254Z" fill="#34B6EC"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 16C10 16.5523 9.55228 17 9 17L1 17C0.447715 17 3.91405e-08 16.5523 8.74228e-08 16C1.35705e-07 15.4477 0.447715 15 1 15L9 15C9.55228 15 10 15.4477 10 16Z" fill="#34B6EC"/>
+                        </svg>
+                    </button>
+                </p>
+            </div>
+        </article>
+        <aside class="side-bar">
+            <ul>
+                <li>
+                    <button type="button" class="side" onclick="onTcrSideButtonClick('Back')">
+                        <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 1L1 5L6 9" stroke="#34B6EC" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Back
+                    </button>
+                </li>
+                <li><button type="button" disabled></li>
+                <li><button type="button" disabled></li>
+                <li><button type="button" onclick="onTcrSideButtonClick('summary')">Summary</button></li>
+                <li><button type="button" onclick="onTcrSideButtonClick('details')">Details</button></li>
+            </ul>
+        </aside>
+        <!-- //contents -->
+    </section>
+</div>
+</body>
+</html>

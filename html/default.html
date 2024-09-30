@@ -1,0 +1,29 @@
+<html>
+  <script>
+    function InsertData(strData) {
+      document.getElementById("txt1").value = strData;
+    }
+
+    function SendData() {
+    
+      const webhost = window.chrome.webview.hostObjects.webhost;
+      webhost.callWebhost(document.getElementById("txt2").value);
+    }
+    
+    function callfromHost(strData)
+    {
+    	 document.getElementById("txt1").value = strData;
+    }
+  </script>
+  <head>
+  	   <title>Default screen</title>
+  	</head>
+  <body>
+  	  <h1>Default screen</h1>
+  	  <h5>Recv Data</h5>
+     <P><input type="text" id="txt1" size="100" value="" /></P>
+     <h5>Send Data</h5>
+     <P><input type="text" id="txt2" size="100" value="" /></P>
+    <button type="button" onClick="SendData()">SEND data</button>
+  </body>
+</html>

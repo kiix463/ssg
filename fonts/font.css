@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* Pretendard-Regular */
+@font-face {
+  font-family:'Pretendard';
+  font-style: normal;
+  src:local('※'),  
+  url(Pretendard/Pretendard-Regular.woff) format('woff');
+  font-weight: 400;
+}
+/* Roboto-Regular */
+@font-face {
+  font-family:'Pretendard';
+  font-style: normal;
+  src:local('※'),  
+  url(Pretendard/Pretendard-Medium.woff) format('woff');
+  font-weight: 500;
+}
+
+/* Roboto-Medium */
+@font-face {
+  font-family:'Pretendard';
+  font-style: normal;
+  src:local('※'),
+  url(Pretendard/Pretendard-SemiBold.woff) format('woff');
+  font-weight: 600;
+}
+@font-face {
+  font-family:'Pretendard';
+  font-style: normal;
+  src:local('※'),
+  url(Pretendard/Pretendard-Bold.woff) format('woff');
+  font-weight: 700;
+}

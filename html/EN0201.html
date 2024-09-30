@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="Author" content="" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:description" content="">
+<meta property="og:title" content="">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<title></title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--<script src="../js/bootstrap.min.js"></script>-->
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/imagesloaded.pkgd.min.js"></script>
+<script src="../js/gsap.min.js"></script>
+<script src="../js/smooth-scrollbar.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/uiex/common.js"></script>
+</head>
+
+<body>
+<div class="accessbility"><a href="#contents">본문바로가기</a></div>
+<div id="wrapper">
+    <section id="saver">
+        <!-- contents -->
+        <div class="clock-top">
+            <div class="year-logo">
+                <p id="idYear"></p>
+                <p class="logo"><img src="../img/img-title-atecap.svg" alt=""></p>
+            </div>
+            <div class="clock">
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1"></div>
+                <div class="number number2"></div>
+                <div class="number number3"></div>
+                <div class="number number4"></div>
+                <div class="number number5"></div>
+                <div class="number number6"></div>
+                <div class="number number7"></div>
+                <div class="number number8"></div>
+                <div class="number number9"></div>
+                <div class="number number10"></div>
+                <div class="number number11"></div>
+                <div class="number number12"></div>
+            </div>
+            <script>
+                setInterval(onClockTimer, 1000)
+
+                const hourHand = document.querySelector('[data-hour-hand]')
+                const minuteHand = document.querySelector('[data-minute-hand]')
+                const secondHand = document.querySelector('[data-second-hand]')
+
+                function setClock() {
+                    const currentDate = new Date()
+                    const secondsRatio = currentDate.getSeconds() / 60
+                    const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60
+                    const hoursRatio = (minutesRatio + currentDate.getHours()) / 12
+                    setRotation(secondHand, secondsRatio)
+                    setRotation(minuteHand, minutesRatio)
+                    setRotation(hourHand, hoursRatio)
+                }
+
+                function setRotation(element, rotationRatio) {
+                    element.style.setProperty('--rotation', rotationRatio * 360)
+                }
+
+                function setOthers() {
+                    const currentDate = new Date()
+                    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+                    const week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+                    const year = currentDate.getFullYear()
+                    const month = months[currentDate.getMonth()]
+                    const day = currentDate.getDate()
+                    const dayWeek = week[currentDate.getDay()]
+                    const hour24 = currentDate.getHours()
+                    const hour = hour24 % 12
+                    const min = currentDate.getMinutes()
+                    const minute = (min < 10 ? "0"+ min : min)
+                    const ampm = (hour24 <12 ? "AM" : "PM")
+
+                    const daynight = ((hour24 < 7) || (hour24 >= 19)) ? '../img/ico-night.svg' : '../img/ico-day.svg'
+                    if (daynight != $('p.day-night > img').attr('src')) {
+                        $('p.day-night > img').attr('src', daynight)
+                    }
+
+                    // console.log("current date", year, month, day, dayWeek, hour, minute, ampm, hour24)
+                    $('#idYear').html(year)
+                    $('#idMonth').html(month)
+                    $('#idDay').html(day)
+                    $('#idWeek').html(dayWeek)
+                    $('#idHour').html(hour > 0 ? hour : 12)
+                    $('#idMinute').html(minute)
+                    $('#idAmPm').html(ampm)
+                }
+
+                function onClockTimer() {
+                    setClock()
+                    setOthers()
+                }
+
+                window.onload = function() {
+                  onClockTimer()
+                }
+            </script>
+            <dl class="date-block">
+                <dt><span class="month" id="idMonth"></span> <span class="date" id="idDay"></span></dt>
+                <dd class="day" id="idWeek"></dd>
+            </dl>
+        </div>
+        <div class="clock-bottom">
+            <p class="day-night"><img src="../img/ico-day.svg" alt=""> <!--<img src="../img/ico-night.svg" alt="">--></p>
+            <p class="time"><span id="idHour"></span><span id="idMinute"></span></p>
+            <p class="apm" id="idAmPm"></p>
+        </div>
+        <!-- //contents -->
+    </section>
+</div>
+</body>
+</html>

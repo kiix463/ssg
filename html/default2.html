@@ -1,0 +1,123 @@
+<html>
+  <script>
+    function InsertData(strData) {
+    console.log("InsertData");
+    console.log(strData);
+    window.alert(strData);
+      document.getElementById("txt1").value = strData;
+    }
+
+    function SendData() {
+    
+      const webhost = window.chrome.webview.hostObjects.webhost;
+      webhost.callWebhost(document.getElementById("txt2").value);
+    }
+    
+    function callfromHost(strData)
+    {
+
+	 const jsonData = JSON.parse(strData)
+          console.log("callfromHost");
+  	  console.log(strData);
+          window.alert(strData);
+    	 document.getElementById("txt1").value = jsonData.header.req_type;
+    }
+</script>
+
+<script>
+    function changeVideo(videoSrc) {
+        // video 요소 가져오기
+        const video = document.querySelector('video');
+        
+        // video 요소의 src 속성 변경
+        video.src = videoSrc;
+
+        // video 요소 다시 로드
+        video.load();
+    }
+</script>
+<meta charset="UTF-8">
+<meta name="Author" content="" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">-->
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:description" content="">
+<meta property="og:title" content="">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<title></title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--<script src="../js/bootstrap.min.js"></script>-->
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/imagesloaded.pkgd.min.js"></script>
+<script src="../js/gsap.min.js"></script>
+<script src="../js/jquery.easing.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<!--<script src="../js/smooth-scrollbar.js"></script> -->
+<script src="../js/jquery.inview.js"></script>
+<script src="../js/ScrollToPlugin3.min.js"></script>
+<script src="../js/ui.js"></script>
+
+  <head>
+  	   <title>Default screen</title>
+  	</head>
+  <body>
+ <div class="accessbility"><a href="#contents">본문바로가기</a></div>
+<div id="wrapper">
+    <header id="header">
+        <div class="row">
+            <div class="headcon-left">
+                <button type="button">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.02868 7.20803C0.50867 7.60833 0.50867 8.39254 1.02868 8.79284L9.63932 15.4213C10.2969 15.9275 11.2493 15.4587 11.2493 14.6289V10.5023L17.6393 15.4213C18.2969 15.9275 19.2493 15.4587 19.2493 14.6289V1.37196C19.2493 0.542119 18.2969 0.0733563 17.6393 0.579553L11.2493 5.49858V1.37196C11.2493 0.542119 10.2969 0.0733563 9.63932 0.579553L1.02868 7.20803Z" fill="#8F8F8F"/>
+                    </svg>
+                </button>
+                <h1><a href="index.html"><img src="../img/img-logo.png" alt=""></a></h1>
+            </div>
+            <ul class="stats">
+                <li class="active"></li>
+                <li class="active"></li>
+                <li></li>
+            </ul>
+            <div class="headcon-right">
+                <div class="date-info">8월 17일 (목) 오후 <span>3:30</span></div>
+                <button type="button">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.9713 8.79197C19.4913 8.39167 19.4913 7.60746 18.9713 7.20716L10.3607 0.578686C9.70311 0.0724888 8.75069 0.541254 8.75069 1.37109V5.49771L2.36068 0.578686C1.70311 0.0724888 0.750687 0.541254 0.750687 1.37109V14.628C0.750687 15.4579 1.70311 15.9266 2.36068 15.4204L8.75069 10.5014V14.628C8.75069 15.4579 9.70311 15.9266 10.3607 15.4204L18.9713 8.79197Z" fill="#8F8F8F"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section id="contents">
+        <!-- contents -->
+        <article class="article">
+            	<h1>video 요소를 이용한 동영상 삽입</h1>
+	<video style="width:576px; height:360" controls>
+		<source src="C:\WTCR\TMAIN\sdcardwin\helps\bvJam350.mp4" type="video/mp4">
+		<source src="/examples/media/sample_video_ogg.ogg" type="video/ogg">
+		이 문장은 사용자의 웹 브라우저가 video 요소를 지원하지 않을 때 나타납니다!
+	</video>
+        </article>
+        <aside class="side-bar">
+            <ul>
+                <li><button type="button"><img src="../img/ico-logout.svg" alt=""> Log out</button></li>
+                <li><button type="button" onClick="changeVideo('C:\\WTCR\\TMAIN\\sdcardwin\\helps\\cstJam350.mp4')">Cassette<br>Jam</button></li>
+                <li><button type="button" onClick="changeVideo('C:\\WTCR\\TMAIN\\sdcardwin\\helps\\tskJam350.mp4')">Divert Bin<br>Jam</button></li>
+                <li><button type="button" onClick="changeVideo('C:\\WTCR\\TMAIN\\sdcardwin\\helps\\fduJam350.mp4')">Bill Transport<br>Jam</button></li>
+                <li><button type="button" onClick="changeVideo('C:\\WTCR\\TMAIN\\sdcardwin\\helps\\bvJam350.mp4')">Validator<br>Jam</button></li>
+            </ul>
+        </aside>
+        <!-- //contents -->
+    </section>
+</div>
+  </body>
+</html>
